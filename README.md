@@ -2,22 +2,22 @@
   <img src="https://cloud.githubusercontent.com/assets/2059754/24601246/753a7f36-1858-11e7-9d6b-7a0e64fb27f7.png" alt="bash logo"/>
 </p>
 
-## Table of Contents
-  1. [Basic Operations](#1-basic-operations)  
-    1.1. [File Operations](#11-file-operations)  
-    1.2. [Text Operations](#12-text-operations)  
-    1.3. [Directory Operations](#13-directory-operations)  
-    1.4. [SSH, System Info & Network Operations](#14-ssh-system-info--network-operations)  
-    1.5. [Process Monitoring Operations](#15-process-monitoring-operations)
-  2. [Basic Shell Programming](#2-basic-shell-programming)  
-    2.1. [Variables](#21-variables)  
-    2.2  [Array](#22-array)  
-    2.3. [String Substitution](#23-string-substitution)  
-    2.4. [Functions](#24-functions)  
-    2.5. [Conditionals](#25-conditionals)  
-    2.6. [Loops](#26-loops)  
-  3. [Tricks](#3-tricks)  
-  4. [Debugging](#4-debugging)  
+## 目录
+  1. [基本操作](#1-basic-operations)  
+    1.1. [文件操作](#11-file-operations)  
+    1.2. [文本操作](#12-text-operations)  
+    1.3. [目录操作](#13-directory-operations)  
+    1.4. [SSH, 系统信息, 网络操作](#14-ssh-system-info--network-operations)  
+    1.5. [进程监控操作](#15-process-monitoring-operations)
+  2. [基础 Shell 编程](#2-basic-shell-programming)  
+    2.1. [变量](#21-variables)  
+    2.2  [数组](#22-array)  
+    2.3. [字符串替换](#23-string-substitution)  
+    2.4. [函数](#24-functions)  
+    2.5. [条件](#25-conditionals)  
+    2.6. [循环](#26-loops)  
+  3. [技巧](#3-tricks)  
+  4. [调试](#4-debugging)  
   
 
 # 1. Basic Operations
