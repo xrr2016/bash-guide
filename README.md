@@ -104,45 +104,45 @@ $ which php
 </table>
 
 ### a. `cat`
-It can be used for the following purposes under UNIX or Linux.  
-* Display text files on screen
-* Copy text files  
-* Combine text files  
-* Create new text files  
+它在 UNIX 或者 Linux 环境下可以用来实现以下目的.  
+* 在屏幕上显示文本文件
+* 复制文本文件  
+* 合并文本文件  
+* 创建新的文本文件  
 ```bash
 cat filename
 cat file1 file2 
 cat file1 file2 > newcombinedfile
-cat < file1 > file2 #copy file1 to file2
+cat < file1 > file2 #将文件1复制到文件2
 ```
 
 ### b. `chmod`
-The chmod command stands for "change mode" and allows you to change the read, write, and execute permissions on your files and folders. For more information on this command check this [link](https://ss64.com/bash/chmod.html).
+chmod 命令表示 "变更模式", 允许你改变文件和文件夹的读取, 写入, 以及执行权限. 查阅这个[链接](https://ss64.com/bash/chmod.html) 获取更多信息.
 ```bash
 chmod -options filename
 ```
 
 ### c. `chown`
-The chown command stands for "change owner", and allows you to change the owner of a given file or folder, which can be a user and a group. Basic usage is simple forward first comes the user (owner), and then the group, delimited by a colon.
+chown 命令表示 "变更所有者", 允许你更改给定文件或文件夹的用户和用户组的所有权. 基本用法简单直接, 首先是用户(拥有者), 然后是用户组, 用冒号分隔.
 ```bash
 chown -options user:group filename
 ```
 
 ### d. `cp`
-Copies a file from one location to other.  
+将文件从一个位置复制到另一个位置.  
 ```bash
 cp filename1 filename2
 ```
-Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
+`filename1` 是源文件路径, `filename2` 是目标路径.
 
 ### e. `diff`
-Compares files, and lists their differences.  
+比较文件, 列出他们的不同之处.  
 ```bash
 diff filename1 filename2
 ```
 
 ### f. `file`
-Determine file type.  
+判定文件类型.  
 ```bash
 file filename
 ```
@@ -152,7 +152,7 @@ $ file index.html
  index.html: HTML document, ASCII text
 ```
 ### g. `find`
-Find files in directory
+查找目录中的文件
 ```bash
 find directory options pattern
 ```
@@ -163,35 +163,35 @@ $ find /home/user1 -name '*.png'
 ```
 
 ### h. `gunzip`
-Un-compresses files compressed by gzip.  
+解压由 gzip 压缩的文件.  
 ```bash
 gunzip filename
 ```
 
 ### i. `gzcat`
-Lets you look at gzipped file without actually having to gunzip it.  
+让你能够不解压查看 gzip 压缩的文件.
 ```bash
 gzcat filename
 ```
 
 ### j. `gzip`
-Compresses files.  
+压缩文件.
 ```bash
 gzip filename
 ```
 
 ### k. `head`
-Outputs the first 10 lines of file  
+输出文件的前10行  
 ```bash
 head filename
 ```
 
 ### l. `lpq`
-Check out the printer queue.  
+查看打印队列.  
 ```bash
 lpq
 ```
-Example:
+示例:
 ```bash
 $ lpq
 Rank    Owner   Job     File(s)                         Total Size
@@ -200,23 +200,23 @@ active  adnanad 59      demo                            399360 bytes
 ```
 
 ### m. `lpr`
-Print the file.  
+打印文件  
 ```bash
 lpr filename
 ```
 
 ### n. `lprm`
-Remove something from the printer queue.  
+删除打印队列的某些任务.  
 ```bash
 lprm jobnumber
 ```
 
 ### o. `ls`
-Lists your files. `ls` has many options: `-l` lists files in 'long format', which contains the exact size of the file, who owns the file, who has the right to look at it, and when it was last modified. `-a` lists all files, including hidden files. For more information on this command check this [link](https://ss64.com/bash/ls.html).  
+列出你的文件. `ls` 命令有很多可选项: `-l` 列出文件的 `long format`, 包含文件的确切大小, 文件所有者, 有权查看它的人, 以及它的最后修改时间. `-a` 列出所有文件, 包括隐藏文件. 查阅这个[链接](https://ss64.com/bash/ls.html)获取更多关于这个命令的信息.
 ```bash
 ls option
 ```
-Example:
+示例:
 <pre>
 $ ls -la
 rwxr-xr-x   33 adnan  staff    1122 Mar 27 18:44 .
@@ -230,48 +230,48 @@ drwxr-xr-x  17 adnan  staff     578 Mar 27 23:36 .git
 </pre>
 
 ### p. `more`
-Shows the first part of a file (move with space and type q to quit).  
+展示文件的第一部分(使用空格键移动, q键退出)  
 ```bash
 more filename
 ```
 
 ### q. `mv`
-Moves a file from one location to other.  
+将文件从一个位置移动到另一个位置.  
 ```bash
 mv filename1 filename2
 ```
-Where `filename1` is the source path to the file and `filename2` is the destination path to the file.
+`filename1` 是源文件路径, `filename2` 是目标路径.
 
-Also it can be used for rename a file.
+它也能被用来重命名文件.
 ```bash
 mv old_name new_name
 ```
 
 ### r. `rm`
-Removes a file. Using this command on a directory gives you an error.
+删除文件. 对一个文件夹使用这个命令会得到一个错误.
 `rm: directory: is a directory`
-To remove a directory you have to pass `-r` which will remove the content of the directory recursively. Optionally you can use `-f` flag to force the deletion i.e. without any confirmations etc.
+为删除目录需要传入 `-r` 参数, 它可以递归的删除目录中的内容. 你可以可选的使用 `-f` 标志强制删除文件, 即不需要任何确认.
 ```bash
 rm filename
 ```
 
 ### s. `tail`
-Outputs the last 10 lines of file. Use `-f` to output appended data as the file grows.  
+输出文件的后10行. 使用 `-f` 标志输出附加的数据.
 ```bash
 tail filename
 ```
 
 ### t. `touch`
-Updates access and modification time stamps of your file. If it doesn't exists, it'll be created.
+更新文件的访问和修改时间戳. 如果文件不存在, 它会被创建.
 ```bash
 touch filename
 ```
-Example:
+示例:
 ```bash
 $ touch trick.md
 ```
 
-## 1.2. Text Operations
+## 1.2. 文本操作
 
 <table>
     <tr>
