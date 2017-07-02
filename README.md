@@ -3,7 +3,7 @@
 </p>
 
 ## 目录
-  1. [基本操作](#1-basic-operations)  
+  1. [基础操作](#1-basic-operations)  
     1.1. [文件操作](#11-file-operations)  
     1.2. [文本操作](#12-text-operations)  
     1.3. [目录操作](#13-directory-operations)  
@@ -20,14 +20,14 @@
   4. [调试](#4-debugging)  
   
 
-# 1. Basic Operations
+# 1. 基础操作
 
 ### a. `export`
-Displays all environment variables. If you want to get details of a specific variable, use `echo $VARIABLE_NAME`.  
+显示所有的环境变量. 如果你要获取特定的变量的详细信息, 使用 `echo $VARIABLE_NAME`
 ```bash
 export
 ```
-Example:
+示例:
 ```bash
 $ export
 AWS_HOME=/Users/adnanadnan/.aws
@@ -40,7 +40,7 @@ $ echo $AWS_HOME
 ```
 
 ### b. `whatis`
-whatis shows description for user commands, system calls, library functions, and others in manual pages
+whatis 命令展示用户指令, 系统调用, 库函数以及其他指令在手册页中的描述信息.
 ```bash
 whatis something
 ```
@@ -51,7 +51,7 @@ bash (1)             - GNU Bourne-Again SHell
 ```
 
 ### c. `whereis`
-whereis searches for executables, source files, and manual pages using a database built by system automatically.
+whereis 命令使用系统自动构建的数据库查找可执行文件, 源文件, 以及手册页面.
 ```bash
 whereis name
 ```
@@ -62,7 +62,7 @@ $ whereis php
 ```
 
 ### d. `which`
-which searches for executables in the directories specified by the environment variable PATH. This command will print the full path of the executable(s).
+which 命令在由环境变量 PATH 指定的目录中搜索可执行文件. 这个命令会显示可执行文件的完整路径.
 ```bash
 which program_name 
 ```
@@ -73,9 +73,9 @@ $ which php
 ```
 
 ### e. clear
-Clears content on window.
+清除窗口上的内容.
 
-## 1.1. File Operations
+## 1.1. 文件操作
 <table>
    <tr>
       <td><a href="#a-cat">cat</a></td>
