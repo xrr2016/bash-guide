@@ -295,12 +295,13 @@ $ touch trick.md
 
 ### a. `awk`
 awk is the most useful command for handling text files. It operates on an entire file line by line. By default it uses whitespace to separate the fields. The most common syntax for awk command is
-
+awk 是处理文本文件最有用的命令. 它逐行操作整个文件. 默认使用空格分隔区域. awk 命令最常用的语法是
 ```bash
 awk '/search_pattern/ { action_to_take_if_pattern_matches; }' file_to_parse
 ```
 
 Lets take following file `/etc/passwd`. Here's the sample data that this file contains:
+用 `/etc/passwd` 做例子. 这是这个文件包含的内容:
 ```
 root:x:0:0:root:/root:/usr/bin/zsh
 daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
@@ -309,6 +310,7 @@ sys:x:3:3:sys:/dev:/usr/sbin/nologin
 sync:x:4:65534:sync:/bin:/bin/sync
 ```
 So now lets get only username from this file. Where `-F` specifies that on which base we are going to separate the fields. In our case it's `:`. `{ print $1 }` means print out the first matching field.
+现在让我们只从这个文件获取用户名. `-F` 指定了我们分隔区域的字符. 这里是 `:`. `{ print $1}` 表示打印第一个匹配的区域.
 ```bash
 awk -F':' '{ print $1 }' /etc/passwd
 ```
