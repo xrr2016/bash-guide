@@ -708,7 +708,7 @@ Tells you how many lines, words and characters there are in a file.
 ```bash
 wc filename
 ```
-Example:
+示例:
 ```bash
 $ wc demo.txt
 7459   15915  398400 demo.txt
