@@ -17,11 +17,10 @@
     2.5. [条件](#25-conditionals)  
     2.6. [循环](#26-loops)  
   3. [技巧](#3-tricks)  
-  4. [调试](#4-debugging)  
+  4. [调试](#4-debugging)
   
 
 # 1. 基础操作
-
 ### a. `export`
 显示所有的环境变量. 如果你要获取特定的变量的详细信息, 使用 `echo $VARIABLE_NAME`
 ```bash
@@ -991,7 +990,7 @@ nohup command &
 
 
 The first line that you will write in bash script files is called `shebang`. This line in any script determines the script's ability to be executed like a standalone executable without typing sh, bash, python, php etc beforehand in the terminal.
-你要写的第一行 bash 脚本名为 `shebang`。 
+你要写的第一行 bash 脚本名为 `shebang`. 这一行决定了脚本的 
 
 ```bash
 #!/bin/bash
@@ -1000,13 +999,15 @@ The first line that you will write in bash script files is called `shebang`. Thi
 ## 2.1. 变量
 
 Creating variables in bash is similar to other languages. There are no data types. A variable in bash can contain a number, a character, a string of characters, etc. You have no need to declare a variable, just assigning a value to its reference will create it.
+在 bash 创建变量跟其他语言相似. 他们没有数据类型. bash 脚本的变量可以包含数字, 字符, 字符串以及其他. 你对变量的引用进行赋值会创建这个变量而不必声明它.
 
-Example:
+示例:
 ```bash
 str="hello world"
 ```
 
 The above line creates a variable `str` and assigns "hello world" to it. The value of variable is retrieved by putting the `$` in the beginning of variable name.
+上面的一行创建了一个变量 `str` 然后将 "Hello world" 赋值给它. 变量的值可以用在变量名前添加 `$` 符号检索出来.
 
 示例:
 ```bash
@@ -1014,6 +1015,7 @@ echo $str   # hello world
 ```
 ## 2.2. 数组
 Like other languages bash has also arrays. An array is variable containing multiple values. There's no maximum limit on the size of array. Array in bash are zero based. The first element is indexed with element 0. There are several ways for creating arrays in bash. Which are given below.
+像其他语言一样 bash 同样拥有数组. 一个数组指的是一个包含多个值得变量. 数组没有最大长度的限制. bash 的数组初始长度为 0. 数组中的第一个元素的索引为 0. 在 bash 中有多种创建数组的方式. 示例如下.
 
 示例:
 ```bash
@@ -1024,32 +1026,41 @@ array=([2]=val [0]=val [1]=val)
 array=(val val val)
 ```
 To display a value at specific index use following syntax:
+使用下面的语法显示特定索引的值:
 
 ```bash
 ${array[i]}     # where i is the index
 ```
 
 If no index is supplied, array element 0 is assumed. To find out how many values there are in the array use the following syntax:
+如果没有提供索引值, 返回值假定为数组的第一个元素. 使用下面的语法得到数组的长度.
 
 ```bash
 ${#array[@]}
 ```
 
 Bash has also support for the ternary conditions. Check some examples below.
+Bash 同样支持三元条件判段. 查看下面的示例.
 
 ```bash
 ${varname:-word}    # if varname exists and isn't null, return its value; otherwise return word
+${varname:-word}    # 如果变量名存在并且值不为空, 返回他的值; 否则返回 word
 ${varname:=word}    # if varname exists and isn't null, return its value; otherwise set it word and then return its value
+${varname:=word}    # 如果变量名存在且值不为空, 返回它的值; 否则将 word 赋给它, 然后返回他的值.
 ${varname:+word}    # if varname exists and isn't null, return word; otherwise return null
+${varname:+word}    # 如果变量名存在且值不为空, 返回 word; 否则返回空值. 
 ${varname:offset:length}    # performs substring expansion. It returns the substring of $varname starting at offset and up to length characters
+${varname:offset:length}    # 表现为字符串截取. 它返回从 offset 值开始到 length 值结束的字符串片段.
 ```
 
 ## 2.3 字符串替换
 
 Check some of the syntax on how to manipulate strings
+查看如何操作字符串的语法
 
 ```bash
 ${variable#pattern}         # if the pattern matches the beginning of the variable's value, delete the shortest part that matches and return the rest
+${variable#pattern}         # 如果 pattern 匹配变量的开始处的值, 删除匹配 pattern 的最短的字符串片段, 返回余下的部分.
 ${variable##pattern}        # if the pattern matches the beginning of the variable's value, delete the longest part that matches and return the rest
 ${variable%pattern}         # if the pattern matches the end of the variable's value, delete the shortest part that matches and return the rest
 ${variable%%pattern}        # if the pattern matches the end of the variable's value, delete the longest part that matches and return the rest
@@ -1060,6 +1071,7 @@ ${#varname}     # returns the length of the value of the variable as a character
 
 ## 2.4. 函数
 As in almost any programming language, you can use functions to group pieces of code in a more logical way or practice the divine art of recursion. Declaring a function is just a matter of writing function my_func { my_code }. Calling a function is just like calling another program, you just write its name.
+跟其他语言一样, 你能够使用函数去更加具有逻辑性或者尝试使用递归去组合片段的代码. 声明函数是只需要写下 function my_func { my_code } 这样的事. 调用函数就像其他的程序那样, 只需要写下他的函数名.  
 
 ```bash
 function name() {
@@ -1067,7 +1079,7 @@ function name() {
 }
 ```
 
-Example:
+示例:
 ```bash
 #!/bin/bash
 function hello {
@@ -1082,6 +1094,7 @@ say "hello world!"
 ```
 
 When you run the above example the `hello` function will output "world!". The above two functions `hello` and `say` are identical. The main difference is function `say`. This function, prints the first argument it receives. Arguments, within functions, are treated in the same manner as arguments given to the script.
+当你运行上面例子的 `hello` 函数会输出 "world!". 上面的两个函数是不同的. 最主要的不同是函数 `say`. 这个函数打印它得到的第一个参数. 函数的参数, 会像处理脚本参数那样.
 
 ## 2.5. 条件语句
 
@@ -1214,10 +1227,13 @@ echo export FOO=BAR >> ~/.bash_profile
 ```
 
 ## Accessing your scripts
+## 访问你的脚本
 
 You can easily access your scripts by creating a bin folder in your home with `mkdir ~/bin`, now all the scripts you put in this folder you can access in any directory.
+你可以通过 `mkdir ~/bin` 命令在主目录创建一个bin目录来访问你的脚本, 现在你可以在任何目录访问你放在这个文件夹里的脚本了.
 
 If you can not access, try append the code below in your `~/.bash_profile` file and after do `source ~/.bash_profile`.
+如何你无法访问, 尝试在 `~/.bash_profile` 文件添加下面的代码, 然后运行 `source ~/.bash_profile`
 ```bash
     # set PATH so it includes user's private bin if it exists
     if [ -d "$HOME/bin" ] ; then
@@ -1227,6 +1243,7 @@ If you can not access, try append the code below in your `~/.bash_profile` file 
 
 # 4. 调试
 You can easily debug the bash script by passing different options to `bash` command. For example `-n` will not run commands and check for syntax errors only. `-v` echo commands before running them. `-x` echo commands after command-line processing.
+你能够通过给 `bash` 命令传入不同的选项轻松的调试 bash 脚本. 例如 `-n` 选项会只检查语法错误而不运行脚本命令. `-v` 会在运行命令之前显示它们. `-x` 会在命令行处理命令的时候显示它.
 
 ```bash
 bash -n scriptname
