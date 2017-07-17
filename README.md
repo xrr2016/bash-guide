@@ -43,7 +43,7 @@ whatis 命令展示用户指令, 系统调用, 库函数以及其他指令在手
 ```bash
 whatis something
 ```
-Example:
+示例:
 ```bash
 $ whatis bash
 bash (1)             - GNU Bourne-Again SHell
@@ -54,7 +54,7 @@ whereis 命令使用系统自动构建的数据库查找可执行文件, 源文�
 ```bash
 whereis name
 ```
-Example:
+示例:
 ```bash
 $ whereis php
 /usr/bin/php
@@ -65,7 +65,7 @@ which 命令在由环境变量 PATH 指定的目录中搜索可执行文件. 这
 ```bash
 which program_name 
 ```
-Example:
+示例:
 ```bash
 $ which php
 /c/xampp/php/php
@@ -155,7 +155,7 @@ $ file index.html
 ```bash
 find directory options pattern
 ```
-Example:
+示例:
 ```bash
 $ find . -name README.md
 $ find /home/user1 -name '*.png'
@@ -293,14 +293,12 @@ $ touch trick.md
 </table>
 
 ### a. `awk`
-awk is the most useful command for handling text files. It operates on an entire file line by line. By default it uses whitespace to separate the fields. The most common syntax for awk command is
-awk 是处理文本文件最有用的命令. 它逐行操作整个文件. 默认使用空格分隔区域. awk 命令最常用的语法是
+awk 是处理文本文件最有用的命令. 它逐行处理整个文件. 默认使用空格分隔字段. awk 命令最常用的语法是
 ```bash
 awk '/search_pattern/ { action_to_take_if_pattern_matches; }' file_to_parse
 ```
 
-Lets take following file `/etc/passwd`. Here's the sample data that this file contains:
-用 `/etc/passwd` 做例子. 这是这个文件包含的内容:
+让我们用 `/etc/passwd` 做例子. 以下是这个文件包含的数据:
 ```
 root:x:0:0:root:/root:/usr/bin/zsh
 daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
@@ -308,13 +306,11 @@ bin:x:2:2:bin:/bin:/usr/sbin/nologin
 sys:x:3:3:sys:/dev:/usr/sbin/nologin
 sync:x:4:65534:sync:/bin:/bin/sync
 ```
-So now lets get only username from this file. Where `-F` specifies that on which base we are going to separate the fields. In our case it's `:`. `{ print $1 }` means print out the first matching field.
-现在让我们只从这个文件获取用户名. `-F` 指定了我们分隔区域的字符. 这里是 `:`. `{ print $1}` 表示打印第一个匹配的区域.
+现在让我们只从这个文件获取用户名. `-F` 指定了我们分隔字段的符号. 此处是 `:`. `{ print $1}` 表示打印第一个匹配的字段.
 ```bash
 awk -F':' '{ print $1 }' /etc/passwd
 ```
-After running the above command you will get following output.
-运行上面的命令之后你会得到如下的输出.
+运行上面的命令之后你会得到以下的输出.
 ```
 root
 daemon
@@ -322,20 +318,17 @@ bin
 sys
 sync
 ```
-For more detail on how to use `awk`, check following [link](https://www.cyberciti.biz/faq/bash-scripting-using-awk).
-查阅这个[链接](https://www.cyberciti.biz/faq/bash-scripting-using-awk)获取更多资料.
+查阅这个[链接](https://www.cyberciti.biz/faq/bash-scripting-using-awk)获取更多关于如何使用 `awk` 细节.
 
 ### b. `cut`
-Remove sections from each line of files
-删除文件每行中的部分
+删除文件每行中的一部分
 
 *example.txt*
 ```bash
 red riding hood went to the park to play
 ```
 
-*show me columns 2 , 7 , and 9 with a space as a separator*
-*显示文件的第2, 7和9行, 用空格分开*
+*显示文件的第2, 7和9列, 用空格分开*
 ```bash
 cut -d " " -f2,7,9 example.txt
 ```
@@ -344,7 +337,6 @@ riding park play
 ```
 
 ### c. `echo`
-Display a line of text
 显示一行文本
 
 *display "Hello World"*
@@ -355,7 +347,6 @@ echo Hello World
 Hello World
 ```
 
-*display "Hello World" with newlines between words*
 *显示单词中有换行符号的"Hello World"*
 ```bash
 echo -ne "Hello\nWorld\n"
@@ -366,8 +357,7 @@ World
 ```
 
 ### d. `egrep`
-Print lines matching a pattern - Extended Expression (alias for: 'grep -E')
-打印符合一种模式的文本行 - 扩展表达式 (别名: 'grep -E')
+打印匹配模式的文本行 - 扩展表达式 (别名: 'grep -E')
 
 *example.txt*
 ```bash
@@ -392,8 +382,7 @@ ipsum dolor sit
 amet.
 ```
 
-*display lines that have either "Lorem" or "dolor" in them.*
-*显示具有 "Lorem" 或者 "dolor" 的行.*
+*显示其中有 "Lorem" 或者 "dolor" 的行.*
 ```bash
 egrep '(Lorem|dolor)' example.txt
 or
@@ -1259,6 +1248,7 @@ bash -x scriptname
 
 ## Translation
 - [Turkish | Türkçe](https://github.com/omergulen/bash-guide)
+- [English](https://github.com/Idnan/bash-guide)
 
 ## License
 
